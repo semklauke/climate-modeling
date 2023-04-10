@@ -27,18 +27,18 @@ end
 color_lookup = Dict(
     5 => RGB(0.00, 0.03, 0.48),
     3 => RGB(0.90, 0.90, 0.97),
-    2 => RGB(0.77, 0.77, 0.86),
+    2 => RGB(0.71, 0.77, 0.86),
     1 => RGB(0.16, 0.38, 0.09)
 )
 
 function plot_geo(X::Matrix, Y::Matrix, T::Matrix{Int8})
-    plot(legend=false, size=(1200,round(Int,1200*(65/128)))
+    plot(legend=false, size=(1200,610))
     for lat=1:64, long=1:127
         rect = Shape(
             [ X[lat, long], X[lat, long+1], X[lat, long+1], X[lat, long] ],
             [ Y[lat, long],  Y[lat, long], Y[lat+1, long], Y[lat+1, long]])
 
-        plot!(rect, fill=color_lookup[T[lat, long]], linewidth=0.2, linecolor=color_lookup[T[lat, long]])
+        plot!(rect, fill=color_lookup[T[lat, long]], linealpha=1, linewidth=1, linecolor=color_lookup[T[lat, long]])
     end
     savefig("projection.pdf")
 end
