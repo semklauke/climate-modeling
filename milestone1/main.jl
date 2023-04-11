@@ -1,4 +1,3 @@
-
 #using Plots
 #using Images
 using PyPlot
@@ -40,18 +39,18 @@ function plot_geo(X::Matrix, Y::Matrix, T::Matrix{Int8})
     savefig("projection.pdf")
 end
 
-color_lookup = Dict(
-    5 => RGB(0.00, 0.03, 0.48),
-    3 => RGB(0.90, 0.90, 0.97),
-    2 => RGB(0.71, 0.77, 0.86),
-    1 => RGB(0.16, 0.38, 0.09),
-)
-function plot_without_projection(T::Matrix{Int8})
-    G = map(p -> color_lookup[p], T)
-    img = colorview(RGB, G)
-    plot(img)
-    savefig("without_projection.pdf")
-end
+# color_lookup = Dict(
+#     5 => RGB(0.00, 0.03, 0.48),
+#     3 => RGB(0.90, 0.90, 0.97),
+#     2 => RGB(0.71, 0.77, 0.86),
+#     1 => RGB(0.16, 0.38, 0.09),
+# )
+# function plot_without_projection(T::Matrix{Int8})
+#     G = map(p -> color_lookup[p], T)
+#     img = colorview(RGB, G)
+#     plot(img)
+#     savefig("without_projection.pdf")
+# end
 
 T = read_geography()
 G = robinson_projection(T)
