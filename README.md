@@ -23,7 +23,7 @@ If you want to speed up the plotting try
 ```bash
 $ make runp
 ```
-This generates a (precompiled sysimage)[https://julialang.github.io/PackageCompiler.jl/dev/index.html] of the included Julia libraries 
+This generates a [precompiled sysimage](https://julialang.github.io/PackageCompiler.jl/dev/index.html) of the included Julia libraries 
 
 ## Python Code
 *IF* there is python code (doing the same thing) it is in the `python/` folder.
